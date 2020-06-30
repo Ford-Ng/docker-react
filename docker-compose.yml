@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   web:
     restart: always
@@ -8,13 +8,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /app/node_modules
-      - .:/app
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
   tests:
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - /app/node_modules
-      - .:/app
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
     command: ["npm", "run", "test"]
